@@ -1,0 +1,37 @@
+<div class="container-fluid">
+    <alert type="md-color">
+        <h2>Tracking the global coronavirus outbreak</h2>
+    </alert>
+    <div class="row">
+        <div class="col-lg-8 map-pan">
+            <app-chart *ngIf="!loading" 
+                                    [type]="'geochart'"
+                                    [data]="data_confirmed"
+                                    [options]="options"
+                                    [elementId]="'covidMap'"></app-chart>
+        </div>
+        <div class="col-lg-4 statistics-pan">
+            <div class="row">
+                <app-chart *ngIf="!loading" 
+                                    [type]="'columnchart'"
+                                    [data]="data_confirmed_chart"
+                                    [options]="optionsColumnChartConfirmed"
+                                    [elementId]="'confirmedColumnChart'"></app-chart>
+            </div>
+            <div class="row">
+                <app-chart *ngIf="!loading" 
+                                    [type]="'columnchart'"
+                                    [data]="data_recovered_chart"
+                                    [options]="optionsColumnChartRecovered"
+                                    [elementId]="'recoveredColumnChart'"></app-chart>
+            </div>
+            <div class="row">
+                <app-chart *ngIf="!loading" 
+                                    [type]="'columnchart'"
+                                    [data]="data_deaths_chart"
+                                    [options]="optionsColumnChartDeaths"
+                                    [elementId]="'deathsColumnChart'"></app-chart>
+            </div>
+        </div>
+    </div>
+</div>

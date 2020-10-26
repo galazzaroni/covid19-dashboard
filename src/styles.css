@@ -1,1 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
+@font-face {
+    font-family: 'RIVERFLOWS';
+    src: url('assets/fonts/riverflows/RIVERFLOWS.woff');
+  }
+
+@font-face {
+    font-family: 'Quicksand';
+    src: url('assets/fonts/quicksand/Quicksand_Bold_Oblique.otf');
+}
+
+@font-face {
+    font-family: 'Quicksand_Book';
+    src: url('assets/fonts/quicksand/Quicksand_Book.otf');
+}

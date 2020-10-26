@@ -1,0 +1,24 @@
+
+<div class="container-fluid">
+  <alert type="md-color">
+    <h2>COVID-19 Outbreak Global Summary</h2>
+  </alert>
+  <div class="row">
+    <div *ngFor="let g of global | keyvalue" class="col-lg-4">
+      <div class="card">
+        <div class="card-body">
+          <h3 class="card-title">{{ g.key | space }}</h3>
+          <p class="card-text" [ngClass]="{'recovered': g.key === 'TotalRecovered'}">{{ g.value | number }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <alert type="md-color">
+    <h2>Reported Cases and Deaths by Country</h2>
+  </alert>
+  <ng2-smart-table [settings]="settings" [source]="countries"></ng2-smart-table>
+
+</div>
+
+<app-map></app-map>
