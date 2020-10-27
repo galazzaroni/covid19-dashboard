@@ -5,6 +5,7 @@ import { tap, pluck, map } from 'rxjs/operators';
 import { DatePipe } from '@angular/common';
 import { Country } from '../interface/country';
 import { Summary } from '../interface/summary';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-Home',
@@ -14,9 +15,10 @@ import { Summary } from '../interface/summary';
   encapsulation: ViewEncapsulation.None
 })
 export class HomeComponent implements OnInit {
+  public href: string = "";
   global: { [key:string]:string};
   countries: Summary[] = [];
-  constructor(private covidService:CovidDataService) { }
+  constructor(private covidService:CovidDataService, private router:Router) { }
 
   settings = {
     actions: false,
@@ -56,6 +58,7 @@ export class HomeComponent implements OnInit {
   };
 
   ngOnInit(): void {
+    this.href = this.router.url;
     this.getAll();
   }
 
