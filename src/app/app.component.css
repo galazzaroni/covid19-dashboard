@@ -1,0 +1,25 @@
+footer {
+    margin: 0 auto;
+    justify-content: center;
+    margin-top: 5rem;
+}
+
+#sticky-footer {
+    flex-shrink: 0;
+    /*margin: 10px;*/
+}
+
+header {
+    text-align: center;
+}
+
+header p {
+    color: red;
+    margin-top: -22px;
+}
+
+header h1 {
+    margin-top: 10px;
+    font-family: 'Amalia';
+    color: red;
+}

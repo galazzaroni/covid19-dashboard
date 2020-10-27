@@ -3,6 +3,8 @@ import { SpacePipe } from '../pipes/space.pipe';
 import { CovidDataService } from '../services/covid-data.service';
 import { tap, pluck, map } from 'rxjs/operators';
 import { DatePipe } from '@angular/common';
+import { Country } from '../interface/country';
+import { Summary } from '../interface/summary';
 
 @Component({
   selector: 'app-Home',
@@ -13,7 +15,7 @@ import { DatePipe } from '@angular/common';
 })
 export class HomeComponent implements OnInit {
   global: { [key:string]:string};
-  countries: any = [];
+  countries: Summary[] = [];
   constructor(private covidService:CovidDataService) { }
 
   settings = {
@@ -62,7 +64,7 @@ export class HomeComponent implements OnInit {
       this.global = data['Global'];
       console.log(this.global);
     })
-    this.covidService.getSummary().subscribe((data:any[]) => {
+    this.covidService.getSummary().subscribe((data:Summary[]) => {
       this.countries = data['Countries'];
       console.log(this.countries);
     })

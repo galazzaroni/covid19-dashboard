@@ -13,3 +13,8 @@
     font-family: 'Quicksand_Book';
     src: url('assets/fonts/quicksand/Quicksand_Book.otf');
 }
+
+@font-face {
+    font-family: 'Amalia';
+    src: url('assets/fonts/amalia/Amalia.otf');
+}
