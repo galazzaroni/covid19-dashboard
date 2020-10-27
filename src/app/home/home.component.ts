@@ -5,7 +5,6 @@ import { tap, pluck, map } from 'rxjs/operators';
 import { DatePipe } from '@angular/common';
 import { Country } from '../interface/country';
 import { Summary } from '../interface/summary';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-Home',
@@ -15,10 +14,12 @@ import { Router } from '@angular/router';
   encapsulation: ViewEncapsulation.None
 })
 export class HomeComponent implements OnInit {
-  public href: string = "";
+  public route: string;
   global: { [key:string]:string};
   countries: Summary[] = [];
-  constructor(private covidService:CovidDataService, private router:Router) { }
+
+
+  constructor(private covidService:CovidDataService) { }
 
   settings = {
     actions: false,
@@ -36,7 +37,7 @@ export class HomeComponent implements OnInit {
                   filter: false,
                   type: 'html',
                   valuePrepareFunction: (country) => {
-                    return  '<a (click)=onClick($event) href="/country/'+country+'">'+ country+ '</a>'; 
+                    return  '<a (click)=onClick($event) href="https://galazzaroni.github.io/covid19-dashboard/country/'+country+'">'+ country+ '</a>'; 
                   }
                 },
       //CountryCode: { title: 'Code' },
@@ -57,8 +58,7 @@ export class HomeComponent implements OnInit {
     }
   };
 
-  ngOnInit(): void {
-    this.href = this.router.url;
+  ngOnInit(): void { 
     this.getAll();
   }
 
