@@ -36,7 +36,7 @@ export class HomeComponent implements OnInit {
                   filter: false,
                   type: 'html',
                   valuePrepareFunction: (country) => {
-                    return  '<a onclick="onCustom($event)" href="/country/' + country + '"><strong>' + country + '</strong></a>'; 
+                    return  '<a onclick="onCustom($event)" href="https://galazzaroni.github.io/covid19-dashboard/country/' + country + '"><strong>' + country + '</strong></a>'; 
                   }
                 },
       //CountryCode: { title: 'Code' },
