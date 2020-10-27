@@ -1,18 +1,21 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
+import { DatePipe, formatDate } from '@angular/common';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CovidDataService {
+  today = new Date();
+  currentDate = formatDate(this.today, 'yyyy-MM-dd', 'en-US');
 
   constructor(private http: HttpClient) { }
 
   url="https://services1.arcgis.com/0MSEUqKaxRlEPj5g/arcgis/rest/services/Coronavirus_2019_nCoV_Cases/FeatureServer/1/query?where=1%3D1&outFields=*&outSR=4326&f=json";
   apiUrl='https://api.covid19api.com/';
-
+  
 
   public getCovidData():Observable<any>{
     return this.http.get<any>(this.url)
@@ -29,6 +32,7 @@ export class CovidDataService {
     return this.http.get(this.apiUrl+'country/'+country);
   }
 
+  
   /**
    * Handle Http operation that failed.
    * Let the app continue.

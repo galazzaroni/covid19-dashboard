@@ -1,0 +1,12 @@
+.alert-md-color {
+    background-color: #f5f5f5;
+    border-color: #f5f5f5;
+    color: black;
+    margin-top: 25px;
+}
+
+h2 {
+    font-family: 'RIVERFLOWS';
+    padding-bottom: 5px;
+    text-align: center;
+}

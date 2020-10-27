@@ -13,6 +13,8 @@ import { AlertModule } from 'ngx-bootstrap/alert';
 import { Ng2SmartTableModule } from 'ng2-smart-table';
 import { CountryComponent } from './country/country.component';
 import { Ng2GoogleChartsModule, GoogleChartsSettings } from 'ng2-google-charts';
+import { CommonModule } from '@angular/common';
+import { ChartsModule } from 'ng2-charts';
 
 @NgModule({
   declarations: [
@@ -31,6 +33,8 @@ import { Ng2GoogleChartsModule, GoogleChartsSettings } from 'ng2-google-charts';
     BrowserAnimationsModule,
     AlertModule.forRoot(),
     Ng2GoogleChartsModule,
+    CommonModule,
+    ChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent],
