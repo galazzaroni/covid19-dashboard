@@ -36,7 +36,7 @@ export class HomeComponent implements OnInit {
                   filter: false,
                   type: 'html',
                   valuePrepareFunction: (country) => {
-                    return  '<a onclick="onCustom($event)" href="https://galazzaroni.github.io/covid19-dashboard/country/' + country + '"><strong>' + country + '</strong></a>'; 
+                    return  '<a (click)=onClick($event) href="/country/'+country+'">'+ country+ '</a>'; 
                   }
                 },
       //CountryCode: { title: 'Code' },
@@ -65,11 +65,15 @@ export class HomeComponent implements OnInit {
   getAll() {
     this.covidService.getSummary().subscribe((data: any[]) => {
       this.global = data['Global'];
-      console.log(this.global);
+      //console.log(this.global);
     })
     this.covidService.getSummary().subscribe((data:Summary[]) => {
       this.countries = data['Countries'];
-      console.log(this.countries);
+      //console.log(this.countries);
     })
+  }
+
+  onClick(event :Event){
+    event.preventDefault();
   }
 }

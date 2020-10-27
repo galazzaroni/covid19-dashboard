@@ -10,12 +10,12 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   { path: 'home', component: HomeComponent },
-  { path: 'country/:country', pathMatch: 'full', component: CountryComponent }
+  { path: 'country/:country', component: CountryComponent }
 
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, {useHash:true})],
+  imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
